@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WonderPeople</title>
+  <title>WonderPeople!</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<style>
+	body {
+		background-color: #eb3d00;
+		text-align: center;
+	}
+	img {
+		margin-top: 250px;
+	}
+	</style>
 
 <%= yield %>
+
+<%= javascript_include_tag    "application", "data-turbolinks-track" => true %>
 
 </body>
 </html>
