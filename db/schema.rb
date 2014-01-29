@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140128101851) do
+ActiveRecord::Schema.define(version: 20140129143514) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -44,9 +44,21 @@ ActiveRecord::Schema.define(version: 20140128101851) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
+    t.string   "full_name"
+    t.integer  "contact_number"
+    t.string   "address"
+    t.integer  "approval_process_id"
+    t.integer  "profile_id"
+    t.integer  "preference_id"
   end
 
+  add_index "cleaners", ["approval_process_id"], name: "index_cleaners_on_approval_process_id"
   add_index "cleaners", ["email"], name: "index_cleaners_on_email", unique: true
+  add_index "cleaners", ["full_name"], name: "index_cleaners_on_full_name"
+  add_index "cleaners", ["preference_id"], name: "index_cleaners_on_preference_id"
+  add_index "cleaners", ["profile_id"], name: "index_cleaners_on_profile_id"
   add_index "cleaners", ["reset_password_token"], name: "index_cleaners_on_reset_password_token", unique: true
+  add_index "cleaners", ["username"], name: "index_cleaners_on_username"
 
 end
