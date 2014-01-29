@@ -1,20 +1,6 @@
 WonderPeople::Application.routes.draw do
 
-  get "about/index"
-  get "admins/index"
-  get "admins/show"
-  get "admins/new"
-  get "admins/edit"
-  get "admins/create"
-  get "admins/update"
-  get "admins/destroy"
-  get "cleaners/index"
-  get "cleaners/show"
-  get "cleaners/new"
-  get "cleaners/edit"
-  get "cleaners/create"
-  get "cleaners/update"
-  get "cleaners/destroy"
+  get "about" => "about#index"
   devise_for :admins
   devise_for :cleaners
 
