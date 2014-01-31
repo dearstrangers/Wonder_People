@@ -1,0 +1,2 @@
+module Cleaners::PreferencesHelper
+end

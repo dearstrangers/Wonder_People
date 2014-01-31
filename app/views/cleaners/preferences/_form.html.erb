@@ -1,0 +1,37 @@
+<%= form_for(@cleaners_preference) do |f| %>
+  <% if @cleaners_preference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cleaners_preference.errors.count, "error") %> prohibited this cleaners_preference from being saved:</h2>
+
+      <ul>
+      <% @cleaners_preference.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :preferred_time %><br>
+    <%= f.text_field :preferred_time %>
+  </div>
+  <div class="field">
+    <%= f.label :preferred_area %><br>
+    <%= f.text_field :preferred_area %>
+  </div>
+  <div class="field">
+    <%= f.label :pet_preference %><br>
+    <%= f.text_field :pet_preference %>
+  </div>
+  <div class="field">
+    <%= f.label :other_preference %><br>
+    <%= f.text_field :other_preference %>
+  </div>
+  <div class="field">
+    <%= f.label :cleaner_id %><br>
+    <%= f.number_field :cleaner_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

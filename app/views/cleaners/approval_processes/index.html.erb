@@ -1,0 +1,39 @@
+<h1>Listing cleaners_approval_processes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Approval status</th>
+      <th>Approval date</th>
+      <th>Approved by</th>
+      <th>Background check</th>
+      <th>Address proof photo</th>
+      <th>Id copy photo</th>
+      <th>Cleaner</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cleaners_approval_processes.each do |cleaners_approval_process| %>
+      <tr>
+        <td><%= cleaners_approval_process.approval_status %></td>
+        <td><%= cleaners_approval_process.approval_date %></td>
+        <td><%= cleaners_approval_process.approved_by %></td>
+        <td><%= cleaners_approval_process.background_check %></td>
+        <td><%= cleaners_approval_process.address_proof_photo %></td>
+        <td><%= cleaners_approval_process.id_copy_photo %></td>
+        <td><%= cleaners_approval_process.cleaner_id %></td>
+        <td><%= link_to 'Show', cleaners_approval_process %></td>
+        <td><%= link_to 'Edit', edit_cleaners_approval_process_path(cleaners_approval_process) %></td>
+        <td><%= link_to 'Destroy', cleaners_approval_process, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Approval process', new_cleaners_approval_process_path %>

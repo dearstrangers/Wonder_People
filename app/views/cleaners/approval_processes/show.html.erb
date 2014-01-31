@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Approval status:</strong>
+  <%= @cleaners_approval_process.approval_status %>
+</p>
+
+<p>
+  <strong>Approval date:</strong>
+  <%= @cleaners_approval_process.approval_date %>
+</p>
+
+<p>
+  <strong>Approved by:</strong>
+  <%= @cleaners_approval_process.approved_by %>
+</p>
+
+<p>
+  <strong>Background check:</strong>
+  <%= @cleaners_approval_process.background_check %>
+</p>
+
+<p>
+  <strong>Address proof photo:</strong>
+  <%= @cleaners_approval_process.address_proof_photo %>
+</p>
+
+<p>
+  <strong>Id copy photo:</strong>
+  <%= @cleaners_approval_process.id_copy_photo %>
+</p>
+
+<p>
+  <strong>Cleaner:</strong>
+  <%= @cleaners_approval_process.cleaner_id %>
+</p>
+
+<%= link_to 'Edit', edit_cleaners_approval_process_path(@cleaners_approval_process) %> |
+<%= link_to 'Back', cleaners_approval_processes_path %>

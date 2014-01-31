@@ -1,0 +1,41 @@
+<%= form_for(@cleaners_profile) do |f| %>
+  <% if @cleaners_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cleaners_profile.errors.count, "error") %> prohibited this cleaners_profile from being saved:</h2>
+
+      <ul>
+      <% @cleaners_profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nickname %><br>
+    <%= f.text_field :nickname %>
+  </div>
+  <div class="field">
+    <%= f.label :recent_photo %><br>
+    <%= f.text_field :recent_photo %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :experience %><br>
+    <%= f.text_field :experience %>
+  </div>
+  <div class="field">
+    <%= f.label :wonder_people_chat %><br>
+    <%= f.text_field :wonder_people_chat %>
+  </div>
+  <div class="field">
+    <%= f.label :cleaner_id %><br>
+    <%= f.number_field :cleaner_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

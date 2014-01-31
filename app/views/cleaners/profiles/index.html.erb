@@ -1,0 +1,37 @@
+<h1>Listing cleaners_profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nickname</th>
+      <th>Recent photo</th>
+      <th>Description</th>
+      <th>Experience</th>
+      <th>Wonder people chat</th>
+      <th>Cleaner</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cleaners_profiles.each do |cleaners_profile| %>
+      <tr>
+        <td><%= cleaners_profile.nickname %></td>
+        <td><%= cleaners_profile.recent_photo %></td>
+        <td><%= cleaners_profile.description %></td>
+        <td><%= cleaners_profile.experience %></td>
+        <td><%= cleaners_profile.wonder_people_chat %></td>
+        <td><%= cleaners_profile.cleaner_id %></td>
+        <td><%= link_to 'Show', cleaners_profile %></td>
+        <td><%= link_to 'Edit', edit_cleaners_profile_path(cleaners_profile) %></td>
+        <td><%= link_to 'Destroy', cleaners_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Profile', new_cleaners_profile_path %>

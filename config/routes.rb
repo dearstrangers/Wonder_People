@@ -1,5 +1,17 @@
 WonderPeople::Application.routes.draw do
 
+  namespace :cleaners do
+    resources :approval_processes
+  end
+
+  namespace :cleaners do
+    resources :preferences
+  end
+
+  namespace :cleaners do
+    resources :profiles
+  end
+
   get "about" => "about#index"
   devise_for :admins
   devise_for :cleaners

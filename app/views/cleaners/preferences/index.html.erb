@@ -1,0 +1,35 @@
+<h1>Listing cleaners_preferences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Preferred time</th>
+      <th>Preferred area</th>
+      <th>Pet preference</th>
+      <th>Other preference</th>
+      <th>Cleaner</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cleaners_preferences.each do |cleaners_preference| %>
+      <tr>
+        <td><%= cleaners_preference.preferred_time %></td>
+        <td><%= cleaners_preference.preferred_area %></td>
+        <td><%= cleaners_preference.pet_preference %></td>
+        <td><%= cleaners_preference.other_preference %></td>
+        <td><%= cleaners_preference.cleaner_id %></td>
+        <td><%= link_to 'Show', cleaners_preference %></td>
+        <td><%= link_to 'Edit', edit_cleaners_preference_path(cleaners_preference) %></td>
+        <td><%= link_to 'Destroy', cleaners_preference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Preference', new_cleaners_preference_path %>

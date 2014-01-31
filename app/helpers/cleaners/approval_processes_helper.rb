@@ -1,0 +1,2 @@
+module Cleaners::ApprovalProcessesHelper
+end

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Preferred time:</strong>
+  <%= @cleaners_preference.preferred_time %>
+</p>
+
+<p>
+  <strong>Preferred area:</strong>
+  <%= @cleaners_preference.preferred_area %>
+</p>
+
+<p>
+  <strong>Pet preference:</strong>
+  <%= @cleaners_preference.pet_preference %>
+</p>
+
+<p>
+  <strong>Other preference:</strong>
+  <%= @cleaners_preference.other_preference %>
+</p>
+
+<p>
+  <strong>Cleaner:</strong>
+  <%= @cleaners_preference.cleaner_id %>
+</p>
+
+<%= link_to 'Edit', edit_cleaners_preference_path(@cleaners_preference) %> |
+<%= link_to 'Back', cleaners_preferences_path %>

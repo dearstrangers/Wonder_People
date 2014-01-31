@@ -1,0 +1,2 @@
+module Cleaners::ProfilesHelper
+end

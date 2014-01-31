@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nickname:</strong>
+  <%= @cleaners_profile.nickname %>
+</p>
+
+<p>
+  <strong>Recent photo:</strong>
+  <%= @cleaners_profile.recent_photo %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @cleaners_profile.description %>
+</p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @cleaners_profile.experience %>
+</p>
+
+<p>
+  <strong>Wonder people chat:</strong>
+  <%= @cleaners_profile.wonder_people_chat %>
+</p>
+
+<p>
+  <strong>Cleaner:</strong>
+  <%= @cleaners_profile.cleaner_id %>
+</p>
+
+<%= link_to 'Edit', edit_cleaners_profile_path(@cleaners_profile) %> |
+<%= link_to 'Back', cleaners_profiles_path %>
