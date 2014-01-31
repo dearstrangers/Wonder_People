@@ -1,5 +1,7 @@
 WonderPeople::Application.routes.draw do
 
+  resources :cleaner_applications
+
   namespace :cleaners do
     resources :approval_processes
   end

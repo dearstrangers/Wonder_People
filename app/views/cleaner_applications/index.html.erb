@@ -1,0 +1,35 @@
+<h1>Listing cleaner_applications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Applicant legal name</th>
+      <th>Applicant area</th>
+      <th>Applicant email</th>
+      <th>Applicant contact number</th>
+      <th>Interview time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cleaner_applications.each do |cleaner_application| %>
+      <tr>
+        <td><%= cleaner_application.applicant_legal_name %></td>
+        <td><%= cleaner_application.applicant_area %></td>
+        <td><%= cleaner_application.applicant_email %></td>
+        <td><%= cleaner_application.applicant_contact_number %></td>
+        <td><%= cleaner_application.interview_time %></td>
+        <td><%= link_to 'Show', cleaner_application %></td>
+        <td><%= link_to 'Edit', edit_cleaner_application_path(cleaner_application) %></td>
+        <td><%= link_to 'Destroy', cleaner_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cleaner application', new_cleaner_application_path %>

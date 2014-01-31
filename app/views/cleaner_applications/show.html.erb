@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Applicant legal name:</strong>
+  <%= @cleaner_application.applicant_legal_name %>
+</p>
+
+<p>
+  <strong>Applicant area:</strong>
+  <%= @cleaner_application.applicant_area %>
+</p>
+
+<p>
+  <strong>Applicant email:</strong>
+  <%= @cleaner_application.applicant_email %>
+</p>
+
+<p>
+  <strong>Applicant contact number:</strong>
+  <%= @cleaner_application.applicant_contact_number %>
+</p>
+
+<p>
+  <strong>Interview time:</strong>
+  <%= @cleaner_application.interview_time %>
+</p>
+
+<%= link_to 'Edit', edit_cleaner_application_path(@cleaner_application) %> |
+<%= link_to 'Back', cleaner_applications_path %>
