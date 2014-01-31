@@ -5992,3 +5992,24 @@ body {
 
 /*# sourceMappingURL=bootstrap.css.map */
 
+
+/*.field {
+  border: 0;
+  border-radius: 3px;
+  padding: 8px;
+  font-size: 16px;"
+}
+.actions {
+  border: 0;
+  border-radius: 3px;
+  padding: 8px;
+  font-size: 16px;
+  background: red;
+  color: white;
+}
+
+*/
+
+.McDonald {
+  color:#ed9c28;
+}

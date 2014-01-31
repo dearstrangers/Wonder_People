@@ -12,25 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :applicant_legal_name %><br>
+    <%= f.label 'Tell us your legal name:' %><br>
     <%= f.text_field :applicant_legal_name %>
   </div>
   <div class="field">
-    <%= f.label :applicant_area %><br>
+    <%= f.label 'Where do you live?' %><br>
     <%= f.text_field :applicant_area %>
   </div>
   <div class="field">
-    <%= f.label :applicant_email %><br>
+    <%= f.label 'Any email?' %><br>
     <%= f.text_field :applicant_email %>
   </div>
   <div class="field">
-    <%= f.label :applicant_contact_number %><br>
+    <%= f.label 'Your contact number:' %><br>
     <%= f.number_field :applicant_contact_number %>
   </div>
   <div class="field">
-    <%= f.label :interview_time %><br>
+    <%= f.label 'Lets meet! When are you good to meet?' %><br>
     <%= f.text_field :interview_time %>
   </div>
+  <br />
+  <br />
   <div class="actions">
     <%= f.submit %>
   </div>
