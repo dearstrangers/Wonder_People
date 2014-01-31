@@ -3,21 +3,58 @@
 <head>
   <title>WonderPeople!</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 	<style>
 	body {
 		background-color: #eb3d00;
+		color:white;
 		text-align: center;
 	}
-	img {
+	/*img {
 		margin-top: 250px;
-	}
+	}*/
 	</style>
 
-<%= yield %>
+	 <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Cover</h3>
+              <ul class="nav masthead-nav">
+                <li class="active"><%= link_to 'Home', root_path %></li>
+                <li><%= link_to 'About', about_path %></li>
+                <li><%= link_to 'Cleaners', cleaner_applications_path, method: :post %></li>
+                <li><%= link_to 'Reschdule', root_path %></li>
+                <li><%= link_to 'Contact', root_path %></li>
+              </ul>
+            </div>
+          </div>
+
+        <div class="inner cover">
+	   	  <%= yield %>
+		</div>
+
+           <div class="mastfoot">
+            <div class="inner">
+              <p><a href="#">WonderPeople Ltd</a> 2014 All rights reserved.</p>
+            </div>
+          </div>
+
+        </div> <!--cover-container-->
+
+      </div> <!--site-wrapper-inner"-->
+
+    </div> <!--site-wrapper-->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
 
 <%= javascript_include_tag    "application", "data-turbolinks-track" => true %>
 
