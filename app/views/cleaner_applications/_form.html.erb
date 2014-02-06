@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label 'Where do you live?' %><br>
-    <%= f.text_field :applicant_area %>
+    <%= f.select :applicant_area, [[I18n.t('locations.hkisland.hkisland'), "Hong Kong Island"],[I18n.t('locations.kowloon.kowloon'), "Kowloon" ], [I18n.t('locations.newterritories.newterritories'), "New Territories"], [I18n.t('locations.islands.islands'), "Outlying Islands"]], :style => "border-radius: 5px;" %>
   </div>
   <div class="field">
     <%= f.label 'Any email?' %><br>
@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label 'Your contact number:' %><br>
-    <%= f.number_field :applicant_contact_number %>
+    <%= f.text_field :applicant_contact_number %>
   </div>
   <div class="field">
     <%= f.label 'Lets meet! When are you good to meet?' %><br>
@@ -37,3 +37,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+

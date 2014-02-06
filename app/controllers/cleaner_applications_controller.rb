@@ -1,6 +1,6 @@
 class CleanerApplicationsController < ApplicationController
   before_action :set_cleaner_application, only: [:show, :edit, :update, :destroy]
-
+  layout 'admin', :only => [:index]
   # GET /cleaner_applications
   # GET /cleaner_applications.json
   def index

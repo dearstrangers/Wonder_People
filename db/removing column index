@@ -1,0 +1,10 @@
+class RemoveColumnsFromCleaners < ActiveRecord::Migration
+  def change
+    remove_index :cleaners, :cleaners_approval_process_id
+    remove_column :cleaners, :cleaners_approval_process_id, :integer
+    remove_index :cleaners, :clearners_profile_id
+    remove_column :cleaners, :clearners_profile_id, :integer
+    remove_index :cleaners, :cleaners_preference_id
+    remove_column :cleaners, :cleaners_preference_id, :integer
+  end
+end

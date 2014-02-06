@@ -5,11 +5,11 @@
 </div> -->
 
 <div class="inner cover">
-    <h1 class="cover-heading">We are</h1>
+    <h1 class="cover-heading"><%= I18n.t('homepage.weare') %></h1>
         <img class="lead" src="http://farm8.staticflickr.com/7355/12187953754_7a05c15663_o.jpg" />
         <p class="lead">
-            <%= link_to 'What we do', about_path, :class=>"btn btn-lg btn-warning" %>
-			<%= link_to 'Book an appointment!', root_path, :class=>"btn btn-lg btn-warning" %>
+            <%= link_to I18n.t('homepage.what'), about_path, :class=>"btn btn-lg btn-warning", :id=>"button1" %>
+			<%= link_to I18n.t('homepage.book'), root_path, :class=>"btn btn-lg btn-warning", :id=>"button2" %>
         </p>
 </div>
 

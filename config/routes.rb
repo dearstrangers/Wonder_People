@@ -14,6 +14,10 @@ WonderPeople::Application.routes.draw do
     resources :profiles
   end
 
+  namespace :admins do
+    get "/" => "dashboard#index"
+  end
+
   get "about" => "about#index"
   devise_for :admins
   devise_for :cleaners
