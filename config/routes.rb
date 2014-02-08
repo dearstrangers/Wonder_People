@@ -1,16 +1,14 @@
 WonderPeople::Application.routes.draw do
 
+  resources :messages
+
   resources :cleaner_applications
+
+  devise_for :cleaners
 
   namespace :cleaners do
     resources :approval_processes
-  end
-
-  namespace :cleaners do
     resources :preferences
-  end
-
-  namespace :cleaners do
     resources :profiles
   end
 
@@ -20,9 +18,10 @@ WonderPeople::Application.routes.draw do
 
   get "about" => "about#index"
   devise_for :admins
-  devise_for :cleaners
 
   root "home#index"
+
+  get "contact" => "contact#index", as: :contact
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

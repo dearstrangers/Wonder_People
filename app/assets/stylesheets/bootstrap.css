@@ -5994,12 +5994,15 @@ body {
 
 
 .McDonald {
-  color:#eb3d00;
-  background-color: white;
+  color:white; /*#eb3d00;*/
+  /*background-color: white;*/
 }
 #button1 {
   color:#666;
 }
 #button2 {
   color:#666;
+}
+#contact_page_heading {
+  margin-top:130px;
 }

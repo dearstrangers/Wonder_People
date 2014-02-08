@@ -129,3 +129,29 @@ en:
       discoverybay: "Discovery Bay"
       lantauisland: "Lantau Island"
       potoi: "Po Toi"
+
+  helpers:
+    form:
+      name: "Tell us your legal name:"
+      area: "Where do you live?"
+      email: "Any email?"
+      contact: "Your contact number:"
+      interview: "Let's meet! When are you good to meet?"
+      submit: "Join!"
+    new: "Welcome！Help us by filling up the form below. Ready?"
+    contactus: "Have questions? Drop a message for us!"
+    submit:
+      ask: "Ask!"
+    message:
+      email: "Your email:"
+      about: "What's it about?"
+      content: "Tell us more..."
+    labels:
+      appointment: "Appointment"
+      reschedule: "Reschedule/Cancel"
+      payment: "Payment"
+      service: "Our Service"
+      join: "Joining WonderPeople!"
+      complain: "Complain"
+      others: "Others"
+

@@ -108,3 +108,28 @@ zh-HK:
       discoverybay: "愉景灣"
       lantauisland: "大嶼山"
       potoi: "蒲苔島"
+
+  helpers:
+    form:
+      name: "告訴我們你的全名！"
+      area: "你住在那裡？"
+      email: "電郵地址?"
+      contact: "我還想要你的聯絡電話！"
+      interview: "來見個面吧！什麼時候比較好？"
+      submit: "加入!"
+    new: "歡迎！先麻煩你幫忙填份表格！準備好未？"
+    contactus: "有問題？快快問我們吧！"
+    submit:
+      ask: "問呀！"
+    message:
+      email: "你的電郵地址："
+      about: "關於什麼？"
+      content: "告訴我們多點細節："
+    labels:
+      appointment: "預約"
+      reschedule: "改期／取消"
+      payment: "付款"
+      service: "我們的服務"
+      join: "加入WonderPeople!"
+      complain: "投訴！"
+      others: "其他"

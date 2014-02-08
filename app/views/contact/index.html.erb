@@ -1,0 +1,41 @@
+<h2 id="contact_page_heading"><%= I18n.t('helpers.contactus') %></h2>
+<div id="contact" style="margin-top: 40px;">
+  <%= form_for(@message) do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% @message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label I18n.t('helpers.message.email') %><br>
+    <%= f.text_field :messager_email, :style => "border-radius: 5px; color:black;" %>
+  </div>
+  <div class="field">
+    <%= f.label I18n.t('helpers.message.about') %><br>
+    <%= f.select :topic, [[I18n.t('helpers.labels.appointment'), "Appointment"],[I18n.t('helpers.labels.reschedule'), "Reschedule" ], [I18n.t('helpers.labels.payment'), "Payment"], [I18n.t('helpers.labels.service'), "Our Service"], [I18n.t('helpers.labels.complain'), "Complain"], [I18n.t('helpers.labels.join'), "Join as cleaners"], [I18n.t('helpers.labels.others'), "Others"]], :style => "border-radius: 5px;" %>
+  </div>
+  <div class="field">
+    <% f.hidden_field :message_id %>
+  </div>
+  <div class="field">
+    <%= f.label I18n.t('helpers.message.content') %><br>
+    <%= f.text_area :content, :style => "border-radius: 5px; width: 30%; height: 160px; color:black;" %>
+  </div>
+  <div class="actions">
+    <%= f.submit I18n.t('helpers.submit.ask'), :class => 'btn btn-warning', :style => "height: 45px;" %>
+  </div>
+<% end %>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>

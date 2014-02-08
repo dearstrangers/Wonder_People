@@ -12,29 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label 'Tell us your legal name:' %><br>
+    <%= f.label I18n.t('helpers.form.name') %><br>
     <%= f.text_field :applicant_legal_name %>
   </div>
   <div class="field">
-    <%= f.label 'Where do you live?' %><br>
+    <%= f.label I18n.t('helpers.form.area') %><br>
     <%= f.select :applicant_area, [[I18n.t('locations.hkisland.hkisland'), "Hong Kong Island"],[I18n.t('locations.kowloon.kowloon'), "Kowloon" ], [I18n.t('locations.newterritories.newterritories'), "New Territories"], [I18n.t('locations.islands.islands'), "Outlying Islands"]], :style => "border-radius: 5px;" %>
   </div>
   <div class="field">
-    <%= f.label 'Any email?' %><br>
+    <%= f.label I18n.t('helpers.form.email') %><br>
     <%= f.text_field :applicant_email %>
   </div>
   <div class="field">
-    <%= f.label 'Your contact number:' %><br>
+    <%= f.label I18n.t('helpers.form.contact') %><br>
     <%= f.text_field :applicant_contact_number %>
   </div>
   <div class="field">
-    <%= f.label 'Lets meet! When are you good to meet?' %><br>
+    <%= f.label I18n.t('helpers.form.interview') %><br>
     <%= f.text_field :interview_time %>
   </div>
   <br />
-  <br />
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit I18n.t('helpers.form.submit'), :class => 'btn btn-sm btn-warning' %>
   </div>
 <% end %>
 
