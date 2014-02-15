@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140213124043) do
+ActiveRecord::Schema.define(version: 20140215092121) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20140213124043) do
     t.boolean  "walls"
     t.string   "district"
     t.string   "area"
+    t.string   "date"
   end
 
   create_table "availabilities", force: true do |t|

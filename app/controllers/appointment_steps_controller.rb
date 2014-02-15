@@ -4,7 +4,12 @@ class AppointmentStepsController < ApplicationController
 
   steps :place, :contact_info, :date_time, :payment_info, :review_order
 
+
   def show
+    @availability = Availability.all
+    @availability_by_date = @availability.group_by(&:date)
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+
     puts params.inspect
     if params.has_key?(:appointment_id)
       @appointment = Appointment.find(params[:appointment_id])
@@ -41,7 +46,7 @@ private
   end  
 
   def contact_info_params
-    params.require(:appointment).permit(:address, :duration, :supplies, :extra_tasks, :size, :rooms, :bathrooms, :pets, :number_of_cleaners, :client_contact_number, :client_whatsapp_number, :client_email, :member_id, :availability_id, :flat_photo, :payment, :state, :payment_state)
+    params.require(:appointment).permit(:address, :duration, :supplies, :extra_tasks, :size, :rooms, :bathrooms, :pets, :number_of_cleaners, :client_contact_number, :client_whatsapp_number, :client_email, :member_id, :availability_id, :flat_photo, :payment, :state, :payment_state, :date)
   end
 
 end

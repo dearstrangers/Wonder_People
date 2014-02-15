@@ -1,4 +1,4 @@
-<h3>Date time!</h3>
+<h3>Pick a date</h3>
 
 <%= form_for @appointment, :url => wizard_path, :method => :put do |f| %>
   <% if @appointment.errors.any? %>
@@ -14,28 +14,31 @@
   <% end %>
 
 
+<div id="availability">
+  <h2 id="month">
+    <%= link_to "<", date: @date.prev_month %>
+    <%= @date.strftime("%B %Y") %>
+    <%= link_to ">", date: @date.next_month %>
+  </h2>
+  <%= calendar @date do |date| %>
+    <%= date.day %>
+    <% if @availability_by_date[date] %>
+      <ul>
+        <% @availability_by_date[date].each do |availability| %>
+          <li><%= link_to availability.time, availability %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+</div>
+
+
   <%= f.hidden_field :appointment_id, :value => @appointment.id %>
 
   <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <%= f.label :date %><br>
+    <%= f.text_field :date, :style => "border-radius: 5px; color:black;" %>
   </div>
   
-  <div class="field">
-    <%= f.label :client_contact_number %><br>
-    <%= f.number_field :client_contact_number %>
-  </div>
-  <div class="field">
-    <%= f.label :client_whatsapp_number %><br>
-    <%= f.check_box :client_whatsapp_number %>
-  </div>
-  <div class="field">
-    <%= f.label :client_email %><br>
-    <%= f.text_field :client_email %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-    <%= link_to 'skip', next_wizard_path %>
-  </div>
 <% end %>
 
