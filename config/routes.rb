@@ -8,6 +8,8 @@ WonderPeople::Application.routes.draw do
 
   resources :messages
 
+  resources :availability
+
   resources :cleaner_applications
 
   devise_for :cleaners, :controllers => { :registrations => "cleaners/registration" }

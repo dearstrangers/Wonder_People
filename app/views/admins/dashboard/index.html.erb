@@ -1,0 +1,182 @@
+<h1>WonderPeople! Admin Dashboard</h1>
+
+<h3>Cleaners</h3>
+<div>No. of cleaners: <%= @number_of_cleaners %></div>
+<div>Cleaner details:</div>
+<table border="1">
+	<tr>
+	  <th>Cleaner ID</th>
+	  <th>Cleaner email</th>
+	  <th>Last signed in at</th>
+	</tr>
+	<% @all_cleaners.each do |cleaner| %>
+	<tr>
+	  <td><%= cleaner.id %></td>
+	  <td><%= cleaner.email %></td>
+	  <td><%= cleaner.last_sign_in_at %></td>
+	</tr>
+	<% end %>
+</table>
+
+<h3>Cleaner Applications</h3>
+<div>No. of cleaner applications: <%= @number_of_cleaner_applications %></div>
+<div>Details:</div>
+<table border="1">
+	<tr>
+	  <th>Name</th>
+	  <th>Area</th>
+	  <th>Email</th>
+	  <th>Contact No.</th>
+	  <th>Interview Time</th>
+	  <th>Created at</th>
+	</tr>
+	<% @all_cleaner_applications.each do |ca| %>
+	<tr>
+	  <td><%= ca.applicant_legal_name %></td>
+	  <td><%= ca.applicant_area %></td>
+	  <td><%= ca.applicant_email %></td>
+	  <td><%= ca.applicant_contact_number %></td>
+	  <td><%= ca.interview_time %></td>
+	  <td><%= ca.created_at %></td>
+	</tr>
+	<% end %>
+</table>
+
+<h3>Messages</h3>
+<div>No. of messages: <%= @number_of_messages %></div>
+<div>Messages:</div>
+<table border="1">
+	<tr>
+		<th>Topic</th>
+		<th>Content</th>
+		<th>User Email</th>
+		<th> </th>
+		<th> </th>
+		<th>AJAX</th>
+	</tr>
+	<% @all_messages.each do |message| %>
+	<tr>
+		<td><%= message.topic %></td>
+		<td><%= message.content %></td>
+		<td><%= message.user_email %></td>
+		<td><%= link_to 'Show', message %></td>
+        <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_tag 'Ajax Destroy', class: "btn btn-sm btn-danger btn-delete-message", href: message_path(message) %></td>
+	</tr>
+	<% end %>
+</table>
+
+<h3>Availability</h3>
+<div>No. of availability: <%= @number_of_availability %></div>
+<div>Availability:</div>
+<table border="1">
+	<tr>
+		<th>ID</th>
+		<th>Area</th>
+		<th>Date</th>
+		<th>Time</th>
+		<th>Cleaner ID</th>
+		<th>State</th>
+		<th>Admin ID</th>
+		<th> </th>
+		<th> </th>
+	</tr>
+	<% @all_availability.each do |availability| %>
+	<tr>
+		<td><%= availability.id %></td>
+		<td><%= availability.area %></td>
+		<td><%= availability.date %></td>
+		<td><%= availability.time %></td>
+		<td><%= availability.cleaner_id %></td>
+		<td><%= availability.state %></td>
+		<td>  </td>
+		<td><%= link_to 'Show', availability_path %></td>
+		<td><%= link_to 'Destroy', availability, method: :delete, data: { confirm: 'Are you sure?' } %></td>  
+	</tr>
+	<% end %>
+</table>
+
+<h3>Appointments/h3>
+<div>No. of appointments: <%= @number_of_appointments %></div>
+<table border="1">
+	<tr>
+	<th>ID</th>
+	<th>Date</th>
+	<th>Availability ID</th>
+	<th>Address</th>
+	<th>District/th>
+	<th>Area</th>
+	<th>Rooms</th>
+	<th>Bathrooms</th>
+	<th>Size</th>
+	<th>Duration</th>
+	<th>Extra Tasks</th>
+	<th>Fridge</th>
+	<th>Oven</th>
+	<th>Cabinets</th>
+	<th>Windows</th>
+	<th>Walls</th>
+	<th>Supplies</th>
+	<th>Pets</th>
+	<th>Client contact</th>
+	<th>Client whatsapp</th>
+	<th> </th>
+	<th> </th>
+	<th> </th>
+	</tr>
+	<% @all_appointments.each do |appointment| %>
+	<tr>
+	<td><%= appointment.id %></td>
+	<td><%= appointment.date %></td>
+	<td><%= appointment.availability_id %></td>
+	<td><%= appointment.address %></td>
+	<td><%= appointment.district %></td>
+	<td><%= appointment.area %></td>
+	<td><%= appointment.rooms %></td>
+	<td><%= appointment.bathrooms %></td>
+	<td><%= appointment.size %></td>
+	<td><%= appointment.duration %></td>
+	<td><%= appointment.extra_tasks %></td>
+	<td><%= appointment.fridge %></td>
+	<td><%= appointment.oven %></td>
+	<td><%= appointment.cabinets %></td>
+	<td><%= appointment.windows %></td>
+	<td><%= appointment.walls %></td>
+	<td><%= appointment.supplies %></td>
+	<td><%= appointment.pets %></td>
+	<td><%= appointment.client_contact_number %></td>
+	<td><%= appointment.client_whatsapp_number %></td>	
+	<td><%= link_to ' Show ', appointment %></td>
+    <td><%= link_to ' Edit ', edit_appointment_path(appointment) %></td>
+    <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	</tr>
+	<% end %>
+</table>
+
+<h3>Interest</h3>
+<div>No. of interest: <%= @number_of_interest %></div>
+<div>Details:</div>
+<table border="1">
+	<tr>
+	  <th>Area</th>
+	  <th>Name</th>
+	  <th>Email</th>
+	  <th>Contact No.</th>
+	  <th>Created At</th>
+	</tr>
+	<% @all_interest.each do |interest| %>
+	<tr>
+	  <td><%= interest.interest_area %></td>
+	  <td><%= interest.interest_name %></td>
+	  <td><%= interest.interest_email %></td>
+	  <td><%= interest.interest_contact_number %></td>
+	  <td><%= interest.created_at %></td>
+	</tr>
+	<% end %>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
