@@ -1,4 +1,4 @@
-<h3 id="appointment_form_heading"><%= I18n.t('helpers.appointment.welcome') %></h3>
+<h2 id="appointment_form_heading"><%= I18n.t('helpers.appointment.welcome') %></h2><br />
 
 <%= form_for(@appointment) do |f| %>
   <% if @appointment.errors.any? %>
@@ -26,25 +26,13 @@
     <%= f.label I18n.t('helpers.appointment.big') %><%= f.text_field :size, :style => "border-radius: 5px; color:black;" %><%= I18n.t('helpers.appointment.sq') %>
   </div>
   <div class="field">
-    <%= f.label I18n.t('helpers.appointment.extra') %><%= f.check_box :extra_tasks %>
+    <%= f.label I18n.t('helpers.appointment.extra') %>
   </div>
   <div class="field">
-    <%= f.label I18n.t('helpers.appointment.laundry') %><%= f.check_box :laundry %>
+    <%= f.label I18n.t('helpers.appointment.laundry') %><%= f.check_box :laundry %>    <%= f.label I18n.t('helpers.appointment.fridge') %><%= f.check_box :fridge %>    <%= f.label I18n.t('helpers.appointment.oven') %><%= f.check_box :oven %>
   </div>
   <div class="field">
-    <%= f.label I18n.t('helpers.appointment.fridge') %><%= f.check_box :fridge %>
-  </div>
-  <div class="field">
-    <%= f.label I18n.t('helpers.appointment.oven') %><%= f.check_box :oven %>
-  </div>
-  <div class="field">
-    <%= f.label I18n.t('helpers.appointment.cabinets') %><%= f.check_box :cabinets %>
-  </div>
-  <div class="field">
-    <%= f.label I18n.t('helpers.appointment.windows') %><%= f.check_box :windows %>
-  </div>
-  <div class="field">
-    <%= f.label I18n.t('helpers.appointment.walls') %><%= f.check_box :walls %>
+    <%= f.label I18n.t('helpers.appointment.cabinets') %><%= f.check_box :cabinets %>    <%= f.label I18n.t('helpers.appointment.windows') %><%= f.check_box :windows %>    <%= f.label I18n.t('helpers.appointment.walls') %><%= f.check_box :walls %>
   </div>
   <div class="field">
     <%= f.label I18n.t('helpers.appointment.pets') %><%= f.text_field :pets, :style => "border-radius: 5px; color:black;" %>
