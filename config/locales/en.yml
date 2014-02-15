@@ -179,6 +179,19 @@ en:
       email: "Your email here please!"
       skip: "skip"
       next: "Next"
+      sq: "sq ft"
+      rooms:
+        one: "1 Room"
+        two: "2 Rooms"
+        three: "3 Rooms"
+        four: "4 Rooms"
+        five: "5 Rooms"
+        six: "6 Rooms"
+      bathrooms:
+        one: "1 Bathroom"
+        two: "2 Bathrooms"
+        three: "3 Bathrooms"
+        four: "4 Bathrooms"
 
   cleaners:
     signup: "Your first step to join WonderPeople!"

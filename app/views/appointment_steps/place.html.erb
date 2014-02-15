@@ -18,13 +18,12 @@
     <%= f.select :district, [[I18n.t('locations.hkisland.hkisland'), "Hong Kong Island"],[I18n.t('locations.kowloon.kowloon'), "Kowloon" ], [I18n.t('locations.newterritories.newterritories'), "New Territories"],[I18n.t('locations.islands.islands'), "Outlying Islands"]], :style => "border-radius: 5px;" %>
   </div>
   <div class="field">
-    <%= f.label I18n.t('helpers.appointment.room') %><%= f.number_field :rooms, :style => "border-radius: 5px; color:black;" %>
+    <%= f.label I18n.t('helpers.appointment.room') %>
+    <%= f.select :rooms, [[I18n.t('helpers.appointment.rooms.one'), 1], [I18n.t('helpers.appointment.rooms.two'), 2], [I18n.t('helpers.appointment.rooms.three'), 3], [I18n.t('helpers.appointment.rooms.four'), 4], [I18n.t('helpers.appointment.rooms.five'), 5], [I18n.t('helpers.appointment.rooms.six'), 6]], :style => "border-radius: 5px;" %>
+    <%= f.select :bathrooms, [[I18n.t('helpers.appointment.bathrooms.one'), 1], [I18n.t('helpers.appointment.bathrooms.two'), 2], [I18n.t('helpers.appointment.bathrooms.three'), 3], [I18n.t('helpers.appointment.bathrooms.four'), 4]], :style => "border-radius: 5px;" %>
   </div>
   <div class="field">
-    <%= f.label I18n.t('helpers.appointment.bathroom') %><%= f.number_field :bathrooms, :style => "border-radius: 5px; color:black;" %>
-  </div>
-  <div class="field">
-    <%= f.label I18n.t('helpers.appointment.big') %><%= f.number_field :size, :style => "border-radius: 5px; color:black;" %>
+    <%= f.label I18n.t('helpers.appointment.big') %><%= f.text_field :size, :style => "border-radius: 5px; color:black;" %><%= I18n.t('helpers.appointment.sq') %>
   </div>
   <div class="field">
     <%= f.label I18n.t('helpers.appointment.extra') %><%= f.check_box :extra_tasks %>

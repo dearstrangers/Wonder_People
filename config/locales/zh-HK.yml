@@ -135,8 +135,8 @@ zh-HK:
       complain: "投訴！"
       others: "其他"
     appointment:
-      room: "你的家有多幾間房?"
-      bathroom: "廁所呢?"
+      room: "你家裡有多幾間房?"
+      bathroom: "洗手間呢?"
       big: "知不知道你的家幾大?"
       extra: "有其他地方要特別清潔嗎?"
       laundry: "洗衣乾衣"
@@ -158,6 +158,19 @@ zh-HK:
       email: "你的email唔該!"
       skip: "跳過"
       next: "下一步"
+      sq: "平方呎"
+      rooms:
+        one: "1 間房"
+        two: "2 間房"
+        three: "3 間房"
+        four: "4 間房"
+        five: "5 間房"
+        six: "6 間房"
+      bathrooms:
+        one: "1 個洗手間"
+        two: "2 個洗手間"
+        three: "3 個洗手間"
+        four: "4 個洗手間"
 
   cleaners:
     signup: "這是你加入WonderPeople!的第一步："
