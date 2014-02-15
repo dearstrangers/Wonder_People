@@ -1,0 +1,33 @@
+<h1>Listing interests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interest name</th>
+      <th>Interest email</th>
+      <th>Interest contact number</th>
+      <th>Interest area</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interests.each do |interest| %>
+      <tr>
+        <td><%= interest.interest_name %></td>
+        <td><%= interest.interest_email %></td>
+        <td><%= interest.interest_contact_number %></td>
+        <td><%= interest.interest_area %></td>
+        <td><%= link_to 'Show', interest %></td>
+        <td><%= link_to 'Edit', edit_interest_path(interest) %></td>
+        <td><%= link_to 'Destroy', interest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Interest', new_interest_path %>

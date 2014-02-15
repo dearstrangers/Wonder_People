@@ -1,0 +1,52 @@
+<%= form_for @appointment, :url => wizard_path, :method => :put do |f| %>
+  <% if @appointment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+      <ul>
+      <% @appointment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%= f.hidden_field :appointment_id, :value => @appointment.id %>
+<div class="field">
+    <%= f.label I18n.t('helpers.appointment.address') %><br>
+    <%= f.text_field :address %>
+  </div>
+  <!--<%= @appointment.district %>-->
+  <div class="field">
+<% if @appointment.district === "Hong Kong Island" %>
+    <%= f.label I18n.t('helpers.appointment.area') %><br>
+    <%= f.select :area, [[I18n.t('locations.hkisland.sheungwan'), "Sheung Wan"],[I18n.t('locations.hkisland.saiwan'), "Sai Wan" ], [I18n.t('locations.hkisland.central'), "Central"],[I18n.t('locations.hkisland.soho'), "SoHo"],[I18n.t('locations.hkisland.midlevel'), "Mid Level" ], [I18n.t('locations.hkisland.tinhau'), "Tin Hau"],[I18n.t('locations.hkisland.taihang'), "Tai Hang"],[I18n.t('locations.hkisland.northpoint'), "North Point" ], [I18n.t('locations.hkisland.taikoo'), "Tai Koo"],[I18n.t('locations.hkisland.chaiwan'), "Chai Wan"],[I18n.t('locations.hkisland.stanley'), "Stanley" ], [I18n.t('locations.hkisland.sheko'), "Shek O"],[I18n.t('locations.hkisland.causewaybay'), "Causeway Bay"],[I18n.t('locations.hkisland.happyvalley'), "Happy Valley" ], [I18n.t('locations.hkisland.pokfulam'), "Pok Fu Lam"],[I18n.t('locations.hkisland.cyberport'), "Cyber Port"],[I18n.t('locations.hkisland.aberdeen'), "Aberdeen" ], [I18n.t('locations.hkisland.wongchukhang'), "Wong Chuk Hang"],[I18n.t('locations.hkisland.apleichau'), "Ap Lei Chau"],[I18n.t('locations.hkisland.deepwaterbay'), "Deep Water Bay" ], [I18n.t('locations.hkisland.repulsebay'), "Repulse Bay"],[I18n.t('locations.hkisland.quarrybay'), "Quarry bay"],[I18n.t('locations.hkisland.saiwanho'), "Sai Wan Ho" ],[I18n.t('locations.hkisland.hengfachuen'), "Heng Fa Chuen" ], [I18n.t('locations.hkisland.shaukeiwan'), "Shau Kei Wan"],[I18n.t('locations.hkisland.kennedytown'), "Kennedy Town" ]], :style => "border-radius: 5px;" %>
+    <% elsif @appointment.district === "Kowloon" %>
+    <%= f.label I18n.t('helpers.appointment.area') %><br>
+   <%= f.select :area, [[I18n.t('locations.kowloon.princeedward'), "Prince Edward"],[I18n.t('locations.kowloon.mongkok'), "Mong Kok" ], [I18n.t('locations.kowloon.jordan'), "Jordan"],[I18n.t('locations.kowloon.hunghom'), "Hung Hom"],[I18n.t('locations.kowloon.kwuntong'), "Kwun tong" ], [I18n.t('locations.kowloon.lamtin'), "Lam Tin"],[I18n.t('locations.kowloon.yautong'), "Yau Tong"],[I18n.t('locations.kowloon.choihung'), "Choi Hung" ], [I18n.t('locations.kowloon.lokfu'), "Lok Fu"],[I18n.t('locations.kowloon.meifoo'), "Mei Foo"],[I18n.t('locations.kowloon.tsimshatsui'), "Tsim Sha Tsui" ], [I18n.t('locations.kowloon.taikoktsui'), "Tai Kok Tsui"],[I18n.t('locations.kowloon.homantin'), "Ho Man Tin"],[I18n.t('locations.kowloon.tokwawan'), "To Kwa Wan" ], [I18n.t('locations.kowloon.yaumatei'), "Yau Ma Tei"],[I18n.t('locations.kowloon.shamshuipo'), "Sham Shui Po"],[I18n.t('locations.kowloon.cheungshawan'), "Cheung Sha Wan" ], [I18n.t('locations.kowloon.laichikok'), "Lai Chi Kok"],[I18n.t('locations.kowloon.shekkipmei'), "Shek Kip Mei"],[I18n.t('locations.kowloon.kowloontong'), "Kowloon Tong" ], [I18n.t('locations.kowloon.kowlooncity'), "Kowloon City"],[I18n.t('locations.kowloon.kowloonbay'), "Kowloon Bay"],[I18n.t('locations.kowloon.ngautaukok'), "Ngau Tau Kok" ],[I18n.t('locations.kowloon.sanpokong'), "San Po Kong" ], [I18n.t('locations.kowloon.diamondhill'), "Diamond Hill"],[I18n.t('locations.kowloon.wongtaisin'), "Wong Tai Sin" ],[I18n.t('locations.kowloon.tszwanshan'), "Tsz Wan Shan" ]], :style => "border-radius: 5px;" %>
+    <% elsif @appointment.district === "New Territories" %>
+     <%= f.label I18n.t('helpers.appointment.area') %><br>
+    <%= f.select :area, [[I18n.t('locations.newterritories.saikung'), "Sai Kung"],[I18n.t('locations.newterritories.tuenmun'), "Tuen Mun" ], [I18n.t('locations.newterritories.yuenlong'), "Yuen Long"],[I18n.t('locations.newterritories.sheungshui'), "Sheung Shui"],[I18n.t('locations.newterritories.fanling'), "Fanling" ], [I18n.t('locations.newterritories.taiwo'), "Tai Wo"],[I18n.t('locations.newterritories.taipo'), "Tai Po"],[I18n.t('locations.newterritories.fotan'), "Fo Tan" ], [I18n.t('locations.newterritories.shatin'), "Sha Tin"],[I18n.t('locations.newterritories.taiwai'), "Tai Wai"],[I18n.t('locations.newterritories.tsingyi'), "Tsing Yi" ], [I18n.t('locations.newterritories.mawan'), "Ma Wan"],[I18n.t('locations.newterritories.shamtseng'), "Sham Tseng"],[I18n.t('locations.newterritories.tsuenwan'), "Tsuen Wan" ], [I18n.t('locations.newterritories.kwaihing'), "Kwai Hing"],[I18n.t('locations.newterritories.kwaifong'), "Kwai Fong"],[I18n.t('locations.newterritories.tseungkwano'), "Tseung Kwan O" ], [I18n.t('locations.newterritories.clearwaterbay'), "Clear Water Bay"],[I18n.t('locations.newterritories.maonshan'), "Ma On Shan"],[I18n.t('locations.newterritories.tinshuiwai'), "Tin Shui Wai" ], [I18n.t('locations.newterritories.laufaushan'), "Lau Fau Shan"],[I18n.t('locations.newterritories.lokmachau'), "Lok Ma Chau"]], :style => "border-radius: 5px;" %>
+    <% elsif @appointment.district === "Outlying Islands" %>
+     <%= f.label I18n.t('helpers.appointment.area') %><br>
+    <%= f.select :area, [[I18n.t('locations.islands.tungchung'), "Tung Chung"],[I18n.t('locations.islands.cheungchau'), "Cheung Chau" ], [I18n.t('locations.islands.taio'), "Tai O"],[I18n.t('locations.islands.pengchau'), "Peng Chau"],[I18n.t('locations.islands.lammaisland'), "Lamma Island" ], [I18n.t('locations.islands.discoverybay'), "Discovery Bay"],[I18n.t('locations.islands.lantauisland'), "Lantau Island"],[I18n.t('locations.islands.potoi'), "Po Toi" ]], :style => "border-radius: 5px;" %>
+  </div>
+  <% end %>
+  <div class="field">
+    <%= f.label I18n.t('helpers.appointment.contact') %><br>
+    <%= f.number_field :client_contact_number %>
+  </div>
+  <div class="field">
+    <%= f.label I18n.t('helpers.appointment.whatsapp') %><br>
+    <%= f.check_box :client_whatsapp_number %>
+  </div>
+  <div class="field">
+    <%= f.label I18n.t('helpers.appointment.email') %><br>
+    <%= f.text_field :client_email %>
+  </div>
+  <div class="actions">
+    <%= f.submit I18n.t('helpers.appointment.next'), :class => 'btn btn-warning' %>
+    <%= link_to I18n.t('helpers.appointment.skip'), next_wizard_path %>
+  </div>
+<% end %>

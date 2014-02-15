@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140208090243) do
+ActiveRecord::Schema.define(version: 20140213124043) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +30,49 @@ ActiveRecord::Schema.define(version: 20140208090243) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "appointments", force: true do |t|
+    t.string   "address"
+    t.string   "duration"
+    t.boolean  "supplies"
+    t.string   "extra_tasks"
+    t.integer  "size"
+    t.integer  "rooms"
+    t.integer  "bathrooms"
+    t.string   "pets"
+    t.integer  "number_of_cleaners"
+    t.integer  "client_contact_number"
+    t.integer  "client_whatsapp_number"
+    t.string   "client_email"
+    t.integer  "member_id"
+    t.integer  "availability_id"
+    t.string   "flat_photo"
+    t.string   "payment"
+    t.string   "state"
+    t.string   "payment_state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "laundry"
+    t.boolean  "fridge"
+    t.boolean  "oven"
+    t.boolean  "cabinets"
+    t.boolean  "windows"
+    t.boolean  "walls"
+    t.string   "district"
+    t.string   "area"
+  end
+
+  create_table "availabilities", force: true do |t|
+    t.string   "area"
+    t.string   "date"
+    t.string   "time"
+    t.string   "cleaner_id"
+    t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "availabilities", ["cleaner_id"], name: "index_availabilities_on_cleaner_id"
 
   create_table "cleaner_applications", force: true do |t|
     t.string   "applicant_legal_name"
@@ -120,6 +163,15 @@ ActiveRecord::Schema.define(version: 20140208090243) do
   end
 
   add_index "cleaners_profiles", ["cleaner_id"], name: "index_cleaners_profiles_on_cleaner_id"
+
+  create_table "interests", force: true do |t|
+    t.string   "interest_name"
+    t.string   "interest_email"
+    t.integer  "interest_contact_number"
+    t.string   "interest_area"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "messages", force: true do |t|
     t.string   "messager_email"

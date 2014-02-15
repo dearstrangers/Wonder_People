@@ -28,7 +28,7 @@ class Cleaners::ProfilesController < ApplicationController
 
     respond_to do |format|
       if @cleaners_profile.save
-        format.html { redirect_to @cleaners_profile, notice: 'Profile was successfully created.' }
+        format.html { redirect_to after_signup_path(:preference) }
         format.json { render action: 'show', status: :created, location: @cleaners_profile }
       else
         format.html { render action: 'new' }
@@ -69,6 +69,6 @@ class Cleaners::ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cleaners_profile_params
-      params.require(:cleaners_profile).permit(:nickname, :recent_photo, :description, :experience, :wonder_people_chat, :cleaner_id)
+      params.require(:cleaners_profile).permit(:nickname, :recent_photo, :description, :experience, :wonder_people_chat).merge(cleaner_id: current_cleaner.id)
     end
 end

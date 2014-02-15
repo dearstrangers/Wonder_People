@@ -1,0 +1,61 @@
+<h1>Listing appointments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Duration</th>
+      <th>Supplies</th>
+      <th>Extra tasks</th>
+      <th>Size</th>
+      <th>Rooms</th>
+      <th>Bathrooms</th>
+      <th>Pets</th>
+      <th>Number of cleaners</th>
+      <th>Client contact number</th>
+      <th>Client whatsapp number</th>
+      <th>Client email</th>
+      <th>Member</th>
+      <th>Availability</th>
+      <th>Flat photo</th>
+      <th>Payment</th>
+      <th>State</th>
+      <th>Payment state</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @appointments.each do |appointment| %>
+      <tr>
+        <td><%= appointment.address %></td>
+        <td><%= appointment.duration %></td>
+        <td><%= appointment.supplies %></td>
+        <td><%= appointment.extra_tasks %></td>
+        <td><%= appointment.size %></td>
+        <td><%= appointment.rooms %></td>
+        <td><%= appointment.bathrooms %></td>
+        <td><%= appointment.pets %></td>
+        <td><%= appointment.number_of_cleaners %></td>
+        <td><%= appointment.client_contact_number %></td>
+        <td><%= appointment.client_whatsapp_number %></td>
+        <td><%= appointment.client_email %></td>
+        <td><%= appointment.member_id %></td>
+        <td><%= appointment.availability_id %></td>
+        <td><%= appointment.flat_photo %></td>
+        <td><%= appointment.payment %></td>
+        <td><%= appointment.state %></td>
+        <td><%= appointment.payment_state %></td>
+        <td><%= link_to 'Show', appointment %></td>
+        <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
+        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Appointment', new_appointment_path %>

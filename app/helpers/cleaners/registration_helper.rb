@@ -1,0 +1,2 @@
+module Cleaners::RegistrationHelper
+end

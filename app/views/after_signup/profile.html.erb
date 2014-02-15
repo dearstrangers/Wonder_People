@@ -1,0 +1,38 @@
+<h1>Your Profile</h1>
+<%= form_for(@cleaners_profile) do |f| %>
+  <% if @cleaners_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cleaners_profile.errors.count, "error") %> prohibited this cleaners_profile from being saved:</h2>
+
+      <ul>
+      <% @cleaners_profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nickname %><br>
+    <%= f.text_field :nickname, :style => "border-radius: 5px; color:black;" %>
+  </div>
+  <div class="field">
+    <%= f.label :recent_photo %><br>
+    <%= f.text_field :recent_photo, :style => "border-radius: 5px; color:black;" %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description, :style => "border-radius: 5px; color:black;" %>
+  </div>
+  <div class="field">
+    <%= f.label :experience %><br>
+    <%= f.text_field :experience, :style => "border-radius: 5px; color:black;" %>
+  </div>
+  <div class="field">
+    <%= f.label :wonder_people_chat %><br>
+    <%= f.text_field :wonder_people_chat, :style => "border-radius: 5px; color:black;" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit", :class => 'btn btn-warning'%>
+  </div>
+<% end %>

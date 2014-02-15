@@ -46,6 +46,8 @@ end
 
 gem 'carrierwave'
 
+gem 'wicked'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

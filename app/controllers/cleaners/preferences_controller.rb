@@ -69,6 +69,6 @@ class Cleaners::PreferencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cleaners_preference_params
-      params.require(:cleaners_preference).permit(:preferred_time, :preferred_area, :pet_preference, :other_preference, :cleaner_id)
+      params.require(:cleaners_preference).permit(:preferred_time, :preferred_area, :pet_preference, :other_preference).merge(cleaner_id: current_cleaner.id)
     end
 end

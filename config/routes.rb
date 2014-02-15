@@ -1,10 +1,16 @@
 WonderPeople::Application.routes.draw do
 
+  resources :interests
+
+  resources :appointments
+
+  resources :appointment_steps
+
   resources :messages
 
   resources :cleaner_applications
 
-  devise_for :cleaners
+  devise_for :cleaners, :controllers => { :registrations => "cleaners/registration" }
 
   namespace :cleaners do
     resources :approval_processes
@@ -22,6 +28,8 @@ WonderPeople::Application.routes.draw do
   root "home#index"
 
   get "contact" => "contact#index", as: :contact
+
+  resources :after_signup
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

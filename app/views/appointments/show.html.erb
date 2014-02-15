@@ -1,0 +1,94 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @appointment.address %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @appointment.duration %>
+</p>
+
+<p>
+  <strong>Supplies:</strong>
+  <%= @appointment.supplies %>
+</p>
+
+<p>
+  <strong>Extra tasks:</strong>
+  <%= @appointment.extra_tasks %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @appointment.size %>
+</p>
+
+<p>
+  <strong>Rooms:</strong>
+  <%= @appointment.rooms %>
+</p>
+
+<p>
+  <strong>Bathrooms:</strong>
+  <%= @appointment.bathrooms %>
+</p>
+
+<p>
+  <strong>Pets:</strong>
+  <%= @appointment.pets %>
+</p>
+
+<p>
+  <strong>Number of cleaners:</strong>
+  <%= @appointment.number_of_cleaners %>
+</p>
+
+<p>
+  <strong>Client contact number:</strong>
+  <%= @appointment.client_contact_number %>
+</p>
+
+<p>
+  <strong>Client whatsapp number:</strong>
+  <%= @appointment.client_whatsapp_number %>
+</p>
+
+<p>
+  <strong>Client email:</strong>
+  <%= @appointment.client_email %>
+</p>
+
+<p>
+  <strong>Member:</strong>
+  <%= @appointment.member_id %>
+</p>
+
+<p>
+  <strong>Availability:</strong>
+  <%= @appointment.availability_id %>
+</p>
+
+<p>
+  <strong>Flat photo:</strong>
+  <%= @appointment.flat_photo %>
+</p>
+
+<p>
+  <strong>Payment:</strong>
+  <%= @appointment.payment %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @appointment.state %>
+</p>
+
+<p>
+  <strong>Payment state:</strong>
+  <%= @appointment.payment_state %>
+</p>
+
+<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back', appointments_path %>
