@@ -46,7 +46,7 @@ private
   end  
 
   def contact_info_params
-    params.require(:appointment).permit(:address, :duration, :supplies, :extra_tasks, :size, :rooms, :bathrooms, :pets, :number_of_cleaners, :client_contact_number, :client_whatsapp_number, :client_email, :member_id, :availability_id, :flat_photo, :payment, :state, :payment_state, :date)
+    params.require(:appointment).permit(:address, :duration, :supplies, :extra_tasks, :size, :rooms, :bathrooms, :pets, :number_of_cleaners, :client_contact_number, :client_whatsapp_number, :client_email, :member_id, :availability_id, :flat_photo, :payment, :state, :payment_state, :area, :date, :laundry, :fridge, :oven, :cabinets, :window, :walls)
   end
 
 end
